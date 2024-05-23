@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/index.css">
+    <title>Index</title>
+</head>
+<body>
+    <section>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="gradient"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="background-img">
+                <div class="login-box">
+                    <h2>Login</h2>
+                    <form method="post" action="{{ url_for('Datos') }}">
+                        <div class="user-box">
+                            <select name="Neighbourhood" required="">
+                                <option value="" disabled selected>Neighbourhood</option>
+                                <option value="el Poblenou">el Poblenou</option>
+                                <option value="Sants">Sants</option>
+                                <option value="la Nova Esquerra de l'Eixample">la Nova Esquerra de l'Eixample</option>
+                                <option value="la Vila de Gracia">la Vila de Gracia</option>
+                                <option value="Sant Pere, Santa Caterina i la Ribera">Sant Pere, Santa Caterina i la Ribera</option>
+                                <option value="Pedralbes">Pedralbes</option>
+                                <option value="Vallvidrera-el Tibidabo-les Planes">Vallvidrera-el Tibidabo-les Planes</option>
+                                <option value="la Vall d'Hebron">la Vall d'Hebron</option>
+                            </select>
+                            <label>Neighbourhood</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="number" name="Day" required="" placeholder="Day">
+                            <label>Day</label>
+                        </div>
+                        <button type="submit">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

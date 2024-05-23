@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <link rel="stylesheet" href="../static/CSS/data.css">
+</head>
+<body>
+    <h1>Data Visualization</h1>
+    <p>Day: {{ day }}</p>
+    <p>Neighborhood: {{ neighborhood }}</p>
+    
+    <div class="data-visualization">
+        <h2>Pollution Graph</h2>
+        <img src="../static/dataVisualization/graphic.png" alt="Pollution Graph">
+    </div>
+    
+    <div class="data-table">
+        <h2>Data Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Desc_Contaminant</th>
+                    <th>H12</th>
+                    <th>ESTACIO</th>
+                    <th>Day</th>
+                    <th>Month</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                    <tr>
+                        <td>{{ item['Desc_Contaminant'] }}</td>
+                        <td>{{ item['H12'] }}</td>
+                        <td>{{ item['ESTACIO'] }}</td>
+                        <td>{{ item['DIA'] }}</td>
+                        <td>{{ item['MES'] }}</td>
+                        <td>{{ item['ANY'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

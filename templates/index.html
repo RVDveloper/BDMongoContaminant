@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/formulario.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container right-panel-active">
+        
+        <div class="container__form container--signup">
+            <form method="post" action="{{ url_for('Datos') }}" class="form" id="form1">
+            
+                <h2 class="form__title">BCN AIR QUALITY</h2>
+                
+                <select  name="Neighbourhood" required="">
+                    <option value="" disabled selected>Barrio</option>
+                    <option value="el Poblenou">el Poblenou</option>
+                    <option value="Sants">Sants</option>
+                    <option value="la Nova Esquerra de l'Eixample">la Nova Esquerra de l'Eixample</option>
+                    <option value="la Vila de Gracia">la Vila de Gracia</option>
+                    <option value="Sant Pere, Santa Caterina i la Ribera">Sant Pere, Santa Caterina i la Ribera</option>
+                    <option value="Pedralbes">Pedralbes</option>
+                    <option value="Vallvidrera-el Tibidabo-les Planes">Vallvidrera-el Tibidabo-les Planes</option>
+                    <option value="la Vall d'Hebron">la Vall d'Hebron</option>
+                </select>
+                
+                <input type="text" placeholder="Dia" name="Day" class="input" id="dia" required />
+
+                
+                <button type="submit" class="btn" name="submit_type" value="Indicadores">Indicadores</button>
+                <button type="submit" class="btn" name="submit_type" value="Grafica">Grafica</button>
+            </form>
+        </div>
+    
+    
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    
+                </div>
+                <div class="overlay__panel overlay--right">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.getElementById('form1').addEventListener('submit', function(event) {
+        const dia = document.getElementById('dia').value;
+        const diaNumero = parseInt(dia, 10);
+
+        
+        if (isNaN(diaNumero) || diaNumero < 1 || diaNumero > 31) {
+            alert('Ingrese un día válido entre 1 y 31.');
+            event.preventDefault();
+            return;
+        }
+    });
+
+    
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(function(button) {
+        
+        button.addEventListener('click', function(event) {
+            
+            const submitType = event.target.value;
+            
+            const form = document.getElementById('form1');
+            
+            if (submitType === 'Grafica') {
+                form.action = "{{ url_for('get_daily_pollution_data') }}";
+            } else if (submitType === 'Indicadores') {
+                form.action = "{{ url_for('Datos') }}";
+            }
+        });
+    });
+    </script>
+    
+</body>
+</html>

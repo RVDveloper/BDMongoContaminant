@@ -1,0 +1,71 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+  body {
+    background      : url(../img/Diseño\ sin\ título\(1\).png) no-repeat center center fixed;
+    background-size : cover;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
+    font-family     : 'Open Sans Condensed', sans-serif;
+    font-size       : 16px;
+    color           : #43545c;
+    line-height     : 1.8rem;
+  }
+
+
+.container {
+    background-color:rgba(0,0,0,.3);
+    box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+        0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+    height: 60%;
+    max-width: 60%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent; /* Color de fondo de la tarjeta */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-top: 20px; /* Margen superior */
+    margin-bottom: 10px;
+    /* Margen inferior */
+}
+
+.card-header, .card-body {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between; /* Espacio entre elementos */
+}
+
+.card-header h2 {
+    color: white;
+    margin: 0;
+    font-size: larger;
+    font-family:'Open Sans Condensed', sans-serif;
+}
+
+.card-header img {
+    max-width: 60%; 
+    margin-left: 20px; 
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
